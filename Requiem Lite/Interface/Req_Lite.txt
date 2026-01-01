@@ -1,0 +1,4 @@
+A list of changes:
+1, Much lower resource drain when performing actions:<br>   Swimming, jumping, light attacks, etc don't drain stamina.
+2, Passive buffs to regen rates and defense:<br>   More H/M/S regen, provides base armor rating and magic resist
+3, Carry weight and lockpicking buffs:<br>   Can lockpick easy chests by default, gain +100 carry weight
