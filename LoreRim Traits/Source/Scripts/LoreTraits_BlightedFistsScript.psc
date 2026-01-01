@@ -1,0 +1,3 @@
+Scriptname LoreTraits_BlightedFistsScript extends ActiveMagicEffect
+
+; null

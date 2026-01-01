@@ -1,0 +1,9 @@
+Scriptname LoreTraits_SilentDovahScript extends activemagiceffect
+
+Spell Property LoreTraits_SilentDovahPosSpell Auto
+Perk Property LoreTraits_SilentDovahScalingPerk Auto
+
+Event OnEffectFinish(Actor akTarget, Actor akCaster)
+	akTarget.RemovePerk(LoreTraits_SilentDovahScalingPerk)
+	akTarget.RemoveSpell(LoreTraits_SilentDovahPosSpell)
+EndEvent

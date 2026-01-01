@@ -1,0 +1,3 @@
+Scriptname LoreTraits_DiseaseMonitorScript extends ActiveMagicEffect
+
+; null

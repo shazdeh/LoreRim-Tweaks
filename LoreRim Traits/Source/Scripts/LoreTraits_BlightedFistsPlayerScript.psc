@@ -1,0 +1,3 @@
+Scriptname LoreTraits_BlightedFistsPlayerScript extends ReferenceAlias
+
+; null

@@ -1,0 +1,17 @@
+{
+  "rules": [
+    {
+      "friendlyName": "Distribute Master Keys to vendors",
+      "conditions": {
+        "onlyVendors": true,
+        "allowVendors": true
+      },
+      "changes": [
+        {
+          "add": [ "0x00B|LoreRim Master Keys.esp" ],
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

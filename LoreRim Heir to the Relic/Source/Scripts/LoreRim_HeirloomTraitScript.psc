@@ -1,0 +1,7 @@
+Scriptname LoreRim_HeirloomTraitScript extends activemagiceffect
+
+Actor Property LoreRim_HeirloomTrait_ActorRef Auto
+
+Event OnEffectStart(Actor akTarget, Actor akCaster)
+	LoreRim_HeirloomTrait_ActorRef.ShowGiftMenu(False)
+EndEvent
