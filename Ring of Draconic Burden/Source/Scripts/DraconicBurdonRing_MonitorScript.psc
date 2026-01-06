@@ -1,4 +1,4 @@
-Scriptname DraconicBurdonRing_TrackScript extends activemagiceffect
+Scriptname DraconicBurdonRing_MonitorScript extends activemagiceffect
 
 GlobalVariable Property DraconicBurdon_SoulTrack Auto
 Spell Property DraconicBurdonRing_Spell Auto
