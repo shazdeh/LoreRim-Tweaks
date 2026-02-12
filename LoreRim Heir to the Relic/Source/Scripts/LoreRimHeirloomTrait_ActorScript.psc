@@ -1,14 +1,18 @@
 Scriptname LoreRimHeirloomTrait_ActorScript extends ObjectReference
 
-GlobalVariable Property _JSW_FT_GoldDebt Auto
 GlobalVariable Property LoreRim_HeirloomTraitPriceMult Auto
 
 Event OnItemRemoved(Form akBaseItem, Int aiItemCount, ObjectReference akItemReference, ObjectReference akDestContainer)
 	CloseMenu("GiftMenu")
-    Float price = akBaseItem.GetGoldValue() as Float
-    Float mult = LoreRim_HeirloomTraitPriceMult.GetValue()
-    Int currentDebt = _JSW_FT_GoldDebt.GetValueInt()
-    _JSW_FT_GoldDebt.SetValueInt((price * mult) as Int + currentDebt)
+    Actor PlayerRef = akDestContainer as Actor
+    Form[] items = PlayerRef.GetContainerForms()
+    Int i = items.Length
+    While i != 0
+        i -= 1
+        If items[i] != akBaseItem && ! PlayerRef.IsEquipped(items[i])
+            PlayerRef.RemoveItem(items[i], PlayerRef.GetItemCount(items[i]))
+        EndIf
+    EndWhile
 EndEvent
 
 Function CloseMenu(String asMenuName) Global
