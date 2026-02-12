@@ -1,0 +1,123 @@
+[
+    {
+        "description" : "Worse prices for weapon and armor before Civil War is finished",
+        "itemKeyword" : ["VendorItemWeapon", "VendorItemArmor", "VendorItemArrow"],
+        "conditions" : {
+            "quest" : {
+                "id" : "CWSiegeObj",
+                "stage" : 9000,
+                "comparison" : "<"
+            }
+        },
+        "buyMult" : 1.0,
+        "sellMult" : 1.0
+    },
+    {
+        "description" : "Increased price of house materials before MQ",
+        "itemKeyword" : ["LoreRim_HouseMaterial"],
+        "conditions" : {
+            "quest" : {
+                "id" : "MQ305",
+                "stage" : 200,
+                "comparison" : "<"
+            }
+        },
+        "buyMult" : 1.0,
+        "sellMult" : 1.0
+    },
+    {
+        "description" : "Increased prices of magic items before conclusion of mages guild questline",
+        "itemKeyword" : ["VendorItemScroll", "VendorItemSoulGem", "VendorItemSpellTome"],
+        "conditions" : {
+            "quest" : {
+                "id" : "MG08",
+                "stage" : 200,
+                "comparison" : "<"
+            }
+        },
+        "buyMult" : 1.0,
+        "sellMult" : 1.0
+    },
+    {
+        "description" : "Worse prices for gems and jewels before finishing Thieves Guild",
+        "itemKeyword" : ["VendorItemGem", "LoreRim_Lockpick", "VendorItemJewelry", "REQ_VendorItem_BlackMarket"],
+        "conditions" : {
+            "quest" : {
+                "id" : "TGLeadership",
+                "stage" : 200,
+                "comparison" : "<"
+            }
+        },
+        "buyMult" : 1.0,
+        "sellMult" : 1.0
+    },
+    {
+        "description" : "Worse prices before finishing Dawnguard",
+        "itemKeyword" : ["LoreRim_DawnguardPrices"],
+        "conditions" : {
+            "quest" : {
+                "id" : "DLC1VQ08",
+                "stage" : 200,
+                "comparison" : "<"
+            }
+        },
+        "buyMult" : 1.0,
+        "sellMult" : 1.0
+    },
+    {
+        "description" : "Worse prices *before* finishing The Companions questline",
+        "itemKeyword" : ["VendorItemAnimalHide"],
+        "conditions" : {
+            "quest" : {
+                "id" : "C06",
+                "stage" : 200,
+                "comparison" : "<"
+            }
+        },
+        "buyMult" : 1.0,
+        "sellMult" : 1.0
+    },
+    {
+        "description" : "Worse prices *after* finishing The Companions questline",
+        "itemKeyword" : ["LoreRim_Silver"],
+        "conditions" : {
+            "quest" : {
+                "id" : "C06",
+                "stage" : 200,
+                "comparison" : ">="
+            }
+        },
+        "buyMult" : 1.0,
+        "sellMult" : 1.0
+    },
+    {
+        "description" : "Worse prices before finishing Dark Brotherhood",
+        "itemKeyword" : ["LoreRim_Lockpick", "VendorItemPoison"],
+        "conditions" : {
+            "quest" : {
+                "id" : "DB11",
+                "stage" : 200,
+                "comparison" : "<"
+            }
+        },
+        "buyMult" : 1.0,
+        "sellMult" : 1.0
+    },
+    {
+        "description" : "Worse prices for foods in Solstheim",
+        "itemKeyword" : ["VendorItemFood", "VendorItemFoodRaw"],
+        "conditions" : {
+            "locations" : ["DLC2SolstheimLocation"]
+        },
+        "buyMult" : 1.0,
+        "sellMult" : 1.0
+    },
+    {
+        "description" : "Better prices from orcs after completing their cursed tribe or if youre an orc",
+        "conditions" : {
+            "conditionForm" : "OrcPricePerk",
+        },
+        "buyMult" : 1.0,
+        "sellMult" : 1.0
+    }
+]
