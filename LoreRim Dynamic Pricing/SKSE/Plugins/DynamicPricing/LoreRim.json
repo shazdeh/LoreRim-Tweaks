@@ -115,7 +115,7 @@
     {
         "description" : "Better prices from orcs after completing their cursed tribe or if youre an orc",
         "conditions" : {
-            "conditionForm" : "OrcPricePerk",
+            "conditionForm" : "OrcPricePerk"
         },
         "buyMult" : 1.0,
         "sellMult" : 1.0
