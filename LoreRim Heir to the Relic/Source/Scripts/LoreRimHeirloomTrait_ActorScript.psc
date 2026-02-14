@@ -1,7 +1,5 @@
 Scriptname LoreRimHeirloomTrait_ActorScript extends ObjectReference
 
-GlobalVariable Property LoreRim_HeirloomTraitPriceMult Auto
-
 Event OnItemRemoved(Form akBaseItem, Int aiItemCount, ObjectReference akItemReference, ObjectReference akDestContainer)
 	CloseMenu("GiftMenu")
     Actor PlayerRef = akDestContainer as Actor
