@@ -61,7 +61,7 @@ String Function Serialize()
     String result = ""
     Int i
     While i < ActorValues.Length
-        result += Player.GetAV(ActorValues[i]) + ","
+        result += Player.GetBaseAV(ActorValues[i]) + ","
         i += 1
     EndWhile
 
