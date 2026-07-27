@@ -134,7 +134,6 @@ EndEvent
 
 Function AddTheSpells(String skill, Int level, String comp = "=")
     Keyword theKeyword = PO3_SkSEFunctions.GetFormFromEditorID("LoreRim_AutodidactSpell") as Keyword
-    debug.MessageBox(theKeyword)
     If Config.iAutodidactSpell
         Spell[] spells = GetSpellsWithKeyword(theKeyword, skill, level, comp, Config.iAutodidactCount)
         Int i
