@@ -16,6 +16,9 @@ StartingSkills_Script Property StartingSkills Auto
 Int Property Naaktiid_Extra_Perks Auto
 {Number of extra perks player gets for choosing Naaktiid mode.}
 
+String sMenu = "HUD Menu"
+String sMenuRoot = "_root.HUDMovieBaseInstance.lorerimstart.Menu_mc"
+
 Event OnInit()
     RegisterForMenu("RaceSex Menu")
 EndEvent
@@ -26,10 +29,13 @@ Event OnMenuClose(String sMenuName)
 EndEvent
 
 Function StartSetup()
+    Inject()
     Actor player = Game.GetPlayer()
-    Player.RemoveSpell(REQ_Ability_Birthsign_ChooseBirthsign)
+    Player.RemoveSpell(SkySigns_Ab)
 
     LoreRimStartup_WelcomeMsg.Show()
+
+    AdvanceWidget(0)
 
     b612.GetSpinicon().Show("Please wait...")
     Utility.Wait(10) ; Wait for Requiem events to register
@@ -45,20 +51,24 @@ Function StartSetup()
     EndWhile
 
     ; 1. select Birthsign
-    SkySigns_Ab.Cast(player)
+    AdvanceWidget(1)
+    REQ_Ability_Birthsign_ChooseBirthsign.Cast(player)
 
     Utility.Wait(1)
 
     ; 2. major / minor skills
+    AdvanceWidget(2)
     StartingSkills.OpenMenu()
 
     Utility.Wait(1)
 
     ; 3. Deity
+    AdvanceWidget(3)
     Wintersun.ReceiveFreeDeity()
     Wintersun.HideDeityMenu = True
 
     ; 4. Traits
+    AdvanceWidget(4)
     Traits_SelectionSpell.Cast(player)
 
     While player.HasSpell(Traits_SelectionSpell)
@@ -66,6 +76,7 @@ Function StartSetup()
     EndWhile
 
     ; 5. Game mode
+    AdvanceWidget(5)
     Int mode = LoreRimStartup_ModeMsg.Show()
     SetModSettingBool("Requiem Lite", "bEnableLite:Main", mode == 0)
     If mode == 0
@@ -78,4 +89,22 @@ Function StartSetup()
     b612.GetSpinicon().Hide()
 
     player.AddSpell(LoreRimStartUp_KeyBindingHelpSpell, False)
+    DestroyWidget()
+    Stop()
+EndFunction
+
+Function Inject()
+    string[] args = new string[2]
+    args[0] = "lorerimstart"
+    args[1] = Utility.RandomInt(1000, 10000)
+    UI.InvokeStringA("HUD Menu", "_root.HUDMovieBaseInstance.createEmptyMovieClip", args)
+    UI.InvokeString("HUD Menu", "_root.HUDMovieBaseInstance.lorerimstart.loadMovie", "lorerimstartup_inject.swf")
+EndFunction
+
+Function AdvanceWidget(Int stage)
+    UI.InvokeInt(sMenu, sMenuRoot + ".setCurrent", stage)
+EndFunction
+
+Function DestroyWidget()
+    UI.Invoke(sMenu, sMenuRoot + ".done")
 EndFunction
