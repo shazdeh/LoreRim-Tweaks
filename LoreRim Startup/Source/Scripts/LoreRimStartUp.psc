@@ -3,9 +3,8 @@ Scriptname LoreRimStartUp extends Quest
 Import MCM
 
 Quest Property RequiemSetupQuest Auto
-Spell Property REQ_Ability_Birthsign_ChooseBirthsign Auto
+Spell Property ChooseBirthsign Auto
 Spell Property Traits_SelectionSpell Auto
-Spell Property SkySigns_Ab Auto
 WSN_Peryite_Script Property Wintersun Auto
 RequiemLite_Config Property RequiemLite Auto
 Message Property LoreRimStartup_WelcomeMsg Auto
@@ -31,7 +30,6 @@ EndEvent
 Function StartSetup()
     Inject()
     Actor player = Game.GetPlayer()
-    Player.RemoveSpell(SkySigns_Ab)
 
     LoreRimStartup_WelcomeMsg.Show()
 
@@ -52,7 +50,7 @@ Function StartSetup()
 
     ; 1. select Birthsign
     AdvanceWidget(1)
-    REQ_Ability_Birthsign_ChooseBirthsign.Cast(player)
+    ChooseBirthsign.Cast(player)
 
     Utility.Wait(1)
 
